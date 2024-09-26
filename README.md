@@ -8,7 +8,9 @@
 # Đầu nòng
 ![image](https://github.com/user-attachments/assets/9b7f3e6c-28dd-4bd5-8894-9e3be9498f2c)
 
-**Script Bullet**
+###
+### 
+ád
 
 
 
