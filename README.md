@@ -8,10 +8,44 @@
 # Đầu nòng
 ![image](https://github.com/user-attachments/assets/9b7f3e6c-28dd-4bd5-8894-9e3be9498f2c)
 
-###
-### 
-ád
+# FireProjectile
+~~~
+using UnityEngine;
 
+public class FireProjectile : MonoBehaviour
+{
+    public Rigidbody projectile; // Prefab đạn có Rigidbody
+    public float speed = 4f; // Tốc độ đạn
+
+    void Update()
+    {
+        if (Input.GetButtonDown("Fire1")) // Kiểm tra xem phím bắn đã được nhấn chưa
+        {
+            Fire(); // Gọi hàm bắn
+        }
+    }
+
+    void Fire()
+    {
+        if (projectile != null) // Kiểm tra xem projectile đã được gán chưa
+        {
+            // Tạo một bản sao của projectile tại vị trí và góc nhìn hiện tại
+            Rigidbody p = Instantiate(projectile, transform.position, transform.rotation);
+
+            // Thiết lập tốc độ của đạn
+            p.velocity = transform.forward * speed;
+
+            Debug.Log("Projectile fired!"); // Thông báo khi đạn được bắn ra
+        }
+        else
+        {
+            Debug.LogError("Projectile prefab not assigned in the Inspector."); // Cảnh báo nếu prefab không được gán
+        }
+    }
+}
+
+
+~~~
 
 
 
